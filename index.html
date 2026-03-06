@@ -2,7 +2,7 @@
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
-<title>Gia Đình yêu thương vô bờ</title>
+<title>Gia Đình Ngân</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
 
@@ -76,14 +76,28 @@ transform:translateY(-10px) scale(1.05);
 
 .avatar{
 font-size:70px;
-margin-bottom:10px;
+margin-bottom:5px;
 }
 
+/* chữ click */
+
 .click{
-font-size:12px;
+font-size:13px;
 color:#ff6b81;
 margin-bottom:8px;
 font-style:italic;
+animation:blink 1.5s infinite;
+}
+
+@keyframes blink{
+0%{opacity:1}
+50%{opacity:0.4}
+100%{opacity:1}
+}
+
+.card:hover .click{
+animation:none;
+transform:scale(1.1);
 }
 
 .name{
@@ -192,8 +206,6 @@ font-size:18px;
 Gia Đình yêu thương vô bờ
 </header>
 
-<!-- ẢNH GIA ĐÌNH -->
-
 <img class="family-img" src="https://raw.githubusercontent.com/ngankimtan6h-sketch/hoangngan/main/ve-tranh-gia-dinh-5-nguoi-13.jpg">
 
 <div class="subtitle">
@@ -205,7 +217,7 @@ Nơi tình yêu bắt đầu và không bao giờ kết thúc ❤️
 
 <div class="card reveal" onclick="showInfo('kien')">
 <div class="avatar">👨</div>
-<div class="click">Click vào để xem thêm ❤️</div>
+<div class="click">👆 Click vào để xem thêm</div>
 <div class="name">Kiên</div>
 <div class="info">Nghề nghiệp: khai thác mỏ</div>
 <div class="info">Tính cách: trầm ổn đôi lúc hài hước</div>
@@ -214,7 +226,7 @@ Nơi tình yêu bắt đầu và không bao giờ kết thúc ❤️
 
 <div class="card reveal" onclick="showInfo('bich')">
 <div class="avatar">👩</div>
-<div class="click">Click vào để xem thêm ❤️</div>
+<div class="click">👆 Click vào để xem thêm</div>
 <div class="name">Bích</div>
 <div class="info">Nghề nghiệp: kế toán</div>
 <div class="info">Tính cách: vui vẻ hoà đồng</div>
@@ -223,7 +235,7 @@ Nơi tình yêu bắt đầu và không bao giờ kết thúc ❤️
 
 <div class="card reveal" onclick="showInfo('haanh')">
 <div class="avatar">👧</div>
-<div class="click">Click vào để xem thêm ❤️</div>
+<div class="click">👆 Click vào để xem thêm</div>
 <div class="name">Hà Anh</div>
 <div class="info">Học tại: THCS Kim Tân</div>
 <div class="info">Sở thích: làm đồ handmade, chơi game</div>
@@ -231,7 +243,7 @@ Nơi tình yêu bắt đầu và không bao giờ kết thúc ❤️
 
 <div class="card reveal" onclick="showInfo('trung')">
 <div class="avatar">👦</div>
-<div class="click">Click vào để xem thêm ❤️</div>
+<div class="click">👆 Click vào để xem thêm</div>
 <div class="name">Kiên Trung</div>
 <div class="info">5 tuổi</div>
 <div class="info">Em út đáng yêu của gia đình</div>
@@ -239,7 +251,7 @@ Nơi tình yêu bắt đầu và không bao giờ kết thúc ❤️
 
 <div class="card reveal" onclick="showInfo('ngan')">
 <div class="avatar">👧</div>
-<div class="click">Click vào để xem thêm ❤️</div>
+<div class="click">👆 Click vào để xem thêm</div>
 <div class="name">Ngân</div>
 <div class="info">Học tại: THPT Lào Cai</div>
 <div class="info">Thích du lịch, nghe nhạc và đi chơi với bạn bè</div>
@@ -251,41 +263,37 @@ Nơi tình yêu bắt đầu và không bao giờ kết thúc ❤️
 ❤️ Gia đình là điều tuyệt vời nhất ❤️
 </footer>
 
-<!-- popup -->
-
 <div id="popup" class="popup">
 <div class="popupBox" id="popupContent"></div>
 </div>
 
 <script>
 
-/* dữ liệu popup */
-
 const data={
 
 kien:{
 name:"Bố - Kiên",
-text:"Đôi vai bố rộng như bầu trời, âm thầm gánh vác những lo toan của gia đình.."
+text:"Mẹ cần cù, tảo tần, cả cuộc đời lặng lẽ vì gia đình."
 },
 
 bich:{
 name:"Mẹ - Bích",
-text:"Sự tảo tần của mẹ giống như sợi chỉ bền bỉ, giữ chặt những yêu thương trong nhà.."
+text:"Sự tảo tần của mẹ giống như sợi chỉ bền bỉ, giữ chặt những yêu thương trong nhà."
 },
 
 haanh:{
 name:"Hà Anh",
-text:"Mỗi nụ cười của em gái, mỗi tiếng cười trong trẻo – như những bông hoa nhỏ làm sáng bừng mái nhà.."
+text:"Mỗi nụ cười của em gái, mỗi tiếng cười trong trẻo – như những bông hoa nhỏ làm sáng bừng mái nhà."
 },
 
 trung:{
 name:"Kiên Trung",
-text:"Em trai nhỏ bé nhưng mang theo cả bầu trời tuổi thơ trong trẻo. 🌟."
+text:"Em trai nhỏ bé nhưng mang theo cả bầu trời tuổi thơ trong trẻo 🌟."
 },
 
 ngan:{
 name:"Hoàng Ngân",
-text:"Những đêm học bài lặng lẽ – là dấu chân của sự cố gắng trên con đường trưởng thành. ✨."
+text:"Những đêm học bài lặng lẽ – là dấu chân của sự cố gắng trên con đường trưởng thành ✨."
 }
 
 };
@@ -356,6 +364,3 @@ window.addEventListener("load",reveal);
 
 </body>
 </html>
-
-
-
